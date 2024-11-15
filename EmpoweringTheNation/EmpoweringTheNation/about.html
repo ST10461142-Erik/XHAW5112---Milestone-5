@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Get in touch with us for more information about our courses, venues, and how we are empowering the nation to thrive. Submit your contact details here.">
+        <meta name="keywords" content="contact us, contact form, venue details, Sandton, Rosebank, Braamfontein, empowering the nation, education, courses">
+        <meta property="og:title" content="Contact Us - Empowering the Nation for a Better Future">
+        <meta property="og:description" content="Reach out to us for more information about our programs, venues, and how we empower youth for a brighter future.">
+        <meta property="og:image" content="path_to_image/logo.png">
+        <meta property="og:url" content="https://www.yoursite.com/contact.html">
+        <meta property="og:type" content="website">
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Empowering the Nation",
+          "url": "https://www.yoursite.com/contact.html",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+27-012-345-6789",
+            "contactType": "customer service",
+            "areaServed": "ZA",
+            "availableLanguage": "English"
+          }
+        }
+        </script>
+        <title>Contact - Empowering the Nation for a Better Future</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="_about.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="_images/logo.png" alt="logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <div class="service">
+                <a href="services.html">Calculate Fees</a>
+                </div>
+                <ul class="dropdown">
+                    <li><a href="six_months.html">Six-Month Courses</a></li>
+                    <li><a href="six_weeks.html">Six-week Courses</a></li>
+                </ul>
+            </li>
+            <li><a class="active" href="about.html">Contact</a></li>
+        </ul>
+    </nav>
+    <br>
+    
+<h1 style="margin-left: 20px;">Contact Details</h1><br>
+<p style="margin-right: 20px; margin-left: 20px;">Venue 1 - Johannesburg South</p>
+<p style="margin-right: 20px; margin-left: 20px;"> Address: 70 - 42 High St, Rosettenville, Johannesburg South, 2190</p>
+<p style="margin-right: 20px; margin-left: 20px;">Email: EmpoweringTheNationRosettenville@za.com</p>
+<br>
+<p style="margin-right: 20px; margin-left: 20px;">Venue 2 - Sandton</p>
+<p style="margin-right: 20px; margin-left: 20px;">Address: 126-120 Froome St, Atholl, Sandton, 2196</p>
+<p style="margin-right: 20px; margin-left: 20px;">Email: EmpoweringTheNationAtholl@za.com</p>
+<br>
+<p style="margin-right: 20px; margin-left: 20px;">Venue 3 - Johannesbur North</p>
+<p style="margin-right: 20px; margin-left: 20px;">Address: 33 - 35 Wilfred Ave, Alan Manor, Johannesburg South,2091</p>
+<p style="margin-right: 20px; margin-left: 20px;">Email: EmpoweringTheNationAlanManor@za.com</p>
+<br>
+<br>
+<h1 style="margin-left: 20px; text-align: left; color: #1588da;">Find Your Venue</h1><br>
+<p style="margin-right: 20px; margin-left: 20px;">Please fill fields below:</p>
+ <!-- Contact Form Section -->
+ <div class="form-section" style="margin-right: 20px; margin-left: 20px;">
+    <form id="contactForm" onsubmit="return validateForm(event)">
+        <!-- Phone Number Field -->
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter phone number (e.g. 012-345-6789)" required>
+            <p id="phoneError" class="error" style="display: none;">Please enter a valid phone number.</p>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email address" required>
+            <p id="emailError" class="error" style="display: none;">Please enter a valid email address.</p>
+        </div>
+
+        <!-- Venue Drop-Down Menu -->
+        <div class="form-group">
+            <label for="venue">Select Venue:</label>
+            <select id="venue" name="venue" required onchange="updateMap()">
+                <option value="">Choose a venue</option>
+                <option value="venue1">Venue 1 - Johannesburg South</option>
+                <option value="venue2">Venue 2 - Sandton</option>
+                <option value="venue3">Venue 3 - Johannesburg South</option>
+            </select>
+            <p id="venueError" class="error" style="display: none;">Please select a venue.</p>
+        </div>
+
+        <button type="submit" class="submit-button" alt="submit-button">Submit</button>
+    </form>
+</div>
+
+<!-- Map Section -->
+<div class="map-container">
+    <h3>Directions to the Selected Venue</h3>
+    <!-- Empty iframe will be replaced with the correct one based on venue selection -->
+    <iframe id="venueMap" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<script>
+     // Form Validation Function
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form from submitting until validated
+
+            // Clear previous error messages
+            document.getElementById('phoneError').style.display = 'none';
+            document.getElementById('emailError').style.display = 'none';
+            document.getElementById('venueError').style.display = 'none';
+
+            // Get form values
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const venue = document.getElementById('venue').value;
+
+            let isValid = true;
+
+            // Validate phone number (basic validation for format)
+            const phoneRegex = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+            if (!phoneRegex.test(phone)) {
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Validate email address
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Validate venue selection
+            if (!venue) {
+                document.getElementById('venueError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Form submitted successfully!");
+            }
+
+            return isValid; // If all fields are valid, allow form submission
+        }
+
+        // Update the iframe source based on the selected venue
+        function updateMap() {
+            const venue = document.getElementById('venue').value;
+            const mapIframe = document.getElementById('venueMap');
+            
+            // Set default src as empty initially
+            mapIframe.src = "";
+
+            // Change iframe src based on selected venue
+            if (venue === "venue1") {
+            mapIframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.3071608968553!2d28.05614297451442!3d-26.25169267704736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950f0f252551a3%3A0x716ce4d813859f8b!2s70%20High%20St%2C%20Rosettenville%2C%20Johannesburg%20South%2C%202190!5e0!3m2!1sen!2sza!4v1731581869888!5m2!1sen!2sza";
+        } else if (venue === "venue2") {
+            mapIframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.703480429359!2d28.06795057450846!3d-26.108596377135594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950d2b70a30c89%3A0x6ffa99b2c0e1fac4!2s126%20Froome%20St%2C%20Atholl%2C%20Sandton%2C%202196!5e0!3m2!1sen!2sza!4v1731582005874!5m2!1sen!2sza";
+        } else if (venue === "venue3") {
+            mapIframe.src ="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.613576701974!2d27.988351674515275!3d-26.274202077033525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9508eb37bb7641%3A0xa6bc0bdb29836290!2s33%20Wilfred%20Ave%2C%20Alan%20Manor%2C%20Johannesburg%20South%2C%202091!5e0!3m2!1sen!2sza!4v1731582088186!5m2!1sen!2sza";
+        }
+    }
+</script>
+</html>

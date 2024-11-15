@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="_services.css">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": "Sewing",
+          "provider": {
+            "@type": "Organization",
+            "name": "Empowering the Nation"
+          },
+          "courseMode": "In-person",
+          "price": "1500 ZAR",
+          "priceCurrency": "ZAR"
+        }
+        </script>
+</head>
+<body class="showCart">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="_images/logo.png" alt="logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <div class="service">
+                <a class="active" href="services.html">Calculate Fees</a>
+                </div>
+                <ul class="dropdown">
+                    <li><a href="six_months.html">Six-Month Courses</a></li>
+                    <li><a href="six_weeks.html">Six-week Courses</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <button id="back-to-top" style="display:none;">↑</button>
+
+    
+    <br><br>
+    
+    <h2 style="text-align: left; margin-left: 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 10px;"> Six-month Courses</h2>
+
+    <section class="card-section">
+        <div class="course-card">
+            <a href="_sewing.html">
+                <img src="_images/Sewing_pic.jpg" alt="Sewing_pic">
+                <h3 style="color: rgb(0, 0, 0);">Sewing</h3>
+                <h3 style="color: #1588da;">R1 500,00</h3>
+            </a>
+            <div class="card-buttons">
+                <button  onclick="toggleAddToCart(this, 'Sewing', 1500)"  class="buy-button">Add</button>
+                </div>
+        </div>
+         
+        <div class="course-card">
+            <a href="_landscaping.html">
+                <img src="_images/landscapes-pic.jpg" alt="landscapes-pic">
+                <h3 style="color: rgb(0, 0, 0);">Landscaping</h3>
+                <h3 style="color: #1588da;">R1 500,00</h3>
+                
+            </a>
+            <div class="card-buttons">
+                <button onclick="toggleAddToCart(this, 'Landscaping', 1500)" class="buy-button">Add</button>
+                </div>
+        </div>
+        
+
+            <div class="course-card">
+         <a href="_lifeskills.html">
+             <img src="_images/life-skills-pic.jpg" alt="life-skills-pic">
+             <h3 style="color: rgb(0, 0, 0);">Life Skills</h3>
+             <h3 style="color: #1588da;">R1 500,00</h3>
+         </a>
+         <div class="card-buttons">
+            <button onclick="toggleAddToCart(this, 'Life Skills', 1500)" class="buy-button">Add</button>
+            </div>
+            </div>
+            <div class="course-card">
+         <a href="_firstAid.html"> 
+             <img src="_images/first-aid-pic.jpg" alt="first-aid-pic">
+             <h3 style="color: rgb(0, 0, 0);">First Aid</h3>
+             <h3 style="color: #1588da;">R1 500,00</h3>
+         </a>
+         <div class="card-buttons">
+            <button class="buy-button" onclick="toggleAddToCart(this, 'First Aid', 1500)">Add</button>
+            </div>
+            </div>
+         
+         
+        
+
+
+    </section>
+
+    <br><br>
+    
+    <h2 style="text-align: left; margin-left: 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 10px;">Six-Week Short Courses</h2>
+
+    <section class="card-section">
+        <div class="course-card">
+        <a href="_childm.html">
+             <img src="_images/childminder-pic.jpg" alt="childminder-pic">
+             <h3 style="color: rgb(0, 0, 0);">Child Minding</h3>
+             <h3 style="color: #1588da;">R750,00</h3>
+             <div class="card-buttons">
+                <button class="buy-button" onclick="toggleAddToCart(this, 'Child Minding', 750)">Add</button>
+                </div>    
+         </a>
+        </div>
+         <div class="course-card">
+
+         <a  href="_garden.html">
+             <img src="_images/garden-pic.jpg" alt="garden-pic">
+             <h3 style="color: rgb(0, 0, 0);">Garden Maintenance</h3>
+             <h3 style="color: #1588da;">R750,00</h3>
+         </a>
+         <div class="card-buttons">
+            <button class="buy-button" onclick="toggleAddToCart(this, 'Garden Maintenance', 750)">Add</button>
+            </div>
+        </div>
+        <div class="course-card">
+         <a href="_cooking.html">
+             <img src="_images/cooking-pic.webp" alt="cooking-pic">
+             <h3 style="color: rgb(0, 0, 0);">Cooking</h3>
+             <h3 style="color: #1588da;">R750,00</h3>
+         </a>
+         <div class="card-buttons">
+            <button class="buy-button" onclick="toggleAddToCart(this, 'Cooking', 750)">Add</button>
+            </div>
+        </div>
+    </section>
+    <!-- Shopping Cart Button -->
+    <button id="cart-button" class="cart-button">
+        <img src="/_images/calculator-icon.png" alt="Cart" /> 
+    </button>
+
+    <!-- Calculate Fees Section -->
+    <div class="calculateTab">
+        <h1>Calculate</h1>
+        <div class="ListCart">
+            <p style="margin: 10px; color: #1588da;">Select the courses you're interested in to calculate the total fees:</p>
+
+    <ul class="course-list" style="margin: 10px;">
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="1500"> Sewing - 1,500 ZAR
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="1500"> Landscaping - R1,500
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="1500"> Life Skills - R1,500
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="1500"> First Aid - R1,500
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="750"> Childminding - R750
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="750"> Garden Maintenance - R750
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="750"> Cooking - R750
+            </label>
+        </li>
+    </ul>
+    <div class="calculate-main-button">
+    <button class="calculate-button" onclick="calculateTotal()">Calculate Fees</button>
+    </div>
+    <div id="totalFeeDisplay" class="total-fee"></div>
+           
+        </div>
+        <div class="closebtn">
+            <button class="close" onclick="closeTab()">CLOSE</button>
+        </div>
+</div>
+
+<script>
+    // Function to toggle the calculate tab
+document.getElementById('cart-button').addEventListener('click', function() {
+    const calculateTab = document.querySelector('.calculateTab');
+    calculateTab.classList.toggle('visible');
+});
+
+// Function to close the tab when the "CLOSE" button is clicked
+function closeTab() {
+    document.querySelector('.calculateTab').classList.remove('visible');
+}
+</script>
+
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

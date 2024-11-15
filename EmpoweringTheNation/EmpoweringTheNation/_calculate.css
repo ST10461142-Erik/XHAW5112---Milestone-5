@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+
+
+.course-item {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.calculate-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1588da;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.calculate-button:hover {
+    background-color: #005bb5;
+}
+.total-fee {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+/* Container for the course list */
+.container {
+    margin: 30px auto;
+    padding: 100px; /* Increased padding for more space inside */
+    background-color: #fff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 500px;
+    max-width: 1000px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* List styles for the courses */
+.course-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Checkbox styling */
+.course-checkbox {
+    margin-right: 10px;
+    accent-color: #1588da; /* Blue accent color */
+}
+
+/* Label styling */
+.course-item label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect on labels */
+.course-item label:hover {
+    color: #1588da; /* Change text color on hover */
+}
+
+/* Button for calculating total */
+.calculate-main-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.calculate-button {
+    background-color: #1588da; /* Blue button */
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px; /* Bigger button padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.calculate-button:hover {
+    background-color: #0d6bbf; /* Darker blue on hover */
+}
+
+/* Display the total fee - larger and bolder */
+.total-fee {
+    margin-top: 20px;
+    font-size: 24px; /* Larger font size */
+    font-weight: bold;
+    color: #1588da; /* Blue color for total fee */
+    text-align: center;
+    padding: 15px 0; /* Extra padding for emphasis */
+    border-top: 2px solid #ddd; /* Subtle border at the top */
+    border-bottom: 2px solid #ddd; /* Subtle border at the bottom */
+    background-color: #f5f7fa; /* Light background for the total fee box */
+    transition: font-size 0.3s ease, color 0.3s ease; /* Smooth transition for changes */
+}
+.back-button {
+    padding: 10px 15px;
+    background-color: #1588da;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+.back-button:hover {
+    background-color: #005bb5;
+  }
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+        margin: 20px;
+    }
+
+    .course-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .course-checkbox {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

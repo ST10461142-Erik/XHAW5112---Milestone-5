@@ -1,0 +1,133 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    margin-left: 20px;
+}
+h1, h2 {
+    color: #1588da;
+}
+/* Navigation Bar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4d1d1;
+    padding: 2px 20px;
+    margin-top: 20px; /* Add margin from the top */
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px; /* Add rounded corners to the nav bar */
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.nav-links a.active  {
+    background-color: #0580e4;
+    border-radius: 5px;
+}
+
+
+.cart-container {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    margin: 20px;
+    max-width: 300px;
+    text-align: center;
+}
+.cart-container h2 {
+    font-size: 24px;
+    color: #1588da;
+    margin-bottom: 10px;
+}
+.cart-container p {
+    font-size: 18px;
+    color: #333;
+}
+.cart-container h1 {
+    margin-left: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #1588da;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+/* Cart Button Styles */
+
+.cart-button {
+    position: fixed;
+    bottom: 50px; /* Distance from bottom */
+    right: 20px; /* Distance from right */
+    background-color: #c2c2c2; /* Button background color */
+    width: 60px; /* Fixed width for circular shape */
+    height: 60px; /* Fixed height for circular shape */
+    border-radius: 50%; /* Fully round button */
+    border: 9px; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1000; /* Ensure it's on top of other elements */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+    display: flex; /* Center content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+/* Styles for the cart icon */
+.cart-button img {
+width: 40px; /* Adjust icon size */
+height: 40px; /* Adjust icon size */
+}
+.cart-button:hover {
+background-color: #e4e4e4; /* Darker shade on hover */
+}
+
+/* Styles for the cart count badge */
+#cart-count {
+position: absolute; /* Position the count absolutely */
+top: 5px; /* Adjust to position the count above the icon */
+right: -5px; /* Adjust to position the count to the right of the icon */
+background-color: #e0a800; /* Badge background color */
+color: white; /* Text color */
+border-radius: 50%; /* Round badge */
+padding: 2px 5px; /* Badge padding */
+font-size: 0.8em; /* Badge font size */
+font-weight: bold; /* Bold text */
+}

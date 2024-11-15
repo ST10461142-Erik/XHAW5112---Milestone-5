@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="_sewing.css">
+    <link rel="stylesheet" type="text/css" href="_services.css">
+</head>
+    
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="_images/logo.png" alt="logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <div class="service">
+                <a class="active" href="services.html">Calculate Fees</a>
+                </div>
+                <ul class="dropdown">
+                    <li><a href="six_months.html">Six-Month Courses</a></li>
+                    <li><a href="six_weeks.html">Six-week Courses</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <!-- Back Button to Go to Previous Page -->
+    <button onclick="goBack()" class="back-button" style="margin-top: 20px; margin-left: 20px;">Back</button>
+    
+    <button id="back-to-top" style="display:none;">↑</button>
+
+    <div class="container">
+        <!-- Image Section -->
+        <div class="image-group">
+            <img src="_images/cooking-Explaing.jpg" alt="cooking-Explaing" height="400" width="700" ><br><br>
+        </div> 
+    
+        <!-- Card Section Next to the Image -->
+        <section class="card-section"></section> 
+            <div class="card">
+                <h3>About the Course</h3>
+                <p>This cooking course is designed to equip individuals with the knowledge and skills needed to prepare and cook nutritious family meals ,providing a solid foundation for anyone looking to improve their culinary skills while ensuring their family enjoys delicious, healthy meals.</p>
+                <h3>R750</h3>
+    
+                <!-- Buttons -->
+                <div class="courses-card-buttons">
+                    <button class="buy-button" onclick="addToCart('Cooking', 1500)">Add</button>
+                    <button class="share-button" onclick="toggleShareModal()">Share</button>
+                </div>
+                 <!-- Share Modal -->
+                 <div id="share-modal" class="share-modal" style="display: none;">
+                    <div class="modal-content">
+                        <span class="close" onclick="toggleShareModal()">&times;</span>
+                        <h3>Share this Course:</h3>
+                        <li>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.varsitycollege.co.za&quote=Discover courses at Empowering the Nation and unlock new skills!" target="_blank">
+                              Facebook
+                            </a>
+                          </li>                          
+                        <li><a class="social-button twitter" href="https://twitter.com/intent/tweet?url=https://https://www.varsitycollege.co.za" target="_blank">X</a></li>
+                        <li><a class="social-button instagram" href="https://www.instagram.com/?url=https://https://www.varsitycollege.co.za" target="_blank">Instagram</li>
+                        <li><a href="https://api.whatsapp.com/send?text=Check%20out%20this%20Sewing%20Course:%20https://https://www.varsitycollege.co.za/" target="_blank">WhatsApp</a></li>
+                    </div>
+                </div> 
+        </section>
+    </div>
+        </section>
+    </div>
+    <h3 style="text-align: left; margin-left: 20px;">Other Courses</h3>
+    <br>
+
+    <div class="image-gallery">
+            <div class="other-courses-card">
+            <a href="_childm.html">
+                <img src="_images/childminder-pic-01.jpg" alt="cooking-pic-01" class="course-image">
+                <h3>Childmining</h3>
+            </a>
+        </div>
+        
+        <div class="other-courses-card">
+            <a href="_garden.html">
+                
+                <img src="_images/garden-pic-02.jpg" alt="cooking-pic-02" class="course-image">
+                <h3>Garden Maintenance</h3>
+            </a>
+        </div>
+        
+        </div>
+    </div>
+    </div>
+    <br>
+
+
+    <!-- Shopping Cart Button -->
+    <button id="cart-button" class="cart-button">
+        <img src="/_images/calculator-icon.png" alt="Cart" /> 
+    </button>
+            
+        <!-- Calculate Fees Section -->
+    <div class="calculateTab">
+        <h1>Calculate</h1>
+        <div class="ListCart">
+            <p style="margin: 10px; color: #1588da;">Select the courses you're interested in to calculate the total fees:</p>
+
+    <ul class="course-list" style="margin: 10px;">
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="1500"> Sewing - 1,500 ZAR
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="1500"> Landscaping - R1,500
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="1500"> Life Skills - R1,500
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="1500"> First Aid - R1,500
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="750"> Childminding - R750
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="750"> Garden Maintenance - R750
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="750"> Cooking - R750
+            </label>
+        </li>
+    </ul>
+    <div class="calculate-main-button">
+    <button class="calculate-button" onclick="calculateTotal()">Calculate Fees</button>
+    </div>
+    <div id="totalFeeDisplay" class="total-fee"></div>
+           
+</div>
+<div class="closebtn">
+    <button class="close-btn" onclick="closeTab()">CLOSE</button>
+</div>
+</div>
+<script>
+    // Function to toggle the calculate tab
+document.getElementById('cart-button').addEventListener('click', function() {
+    const calculateTab = document.querySelector('.calculateTab');
+    calculateTab.classList.toggle('visible');
+});
+
+// Function to close the tab when the "CLOSE" button is clicked
+function closeTab() {
+    document.querySelector('.calculateTab').classList.remove('visible');
+}
+</script>
+    <script src ="script.js"></script>
+</body>
+</html>

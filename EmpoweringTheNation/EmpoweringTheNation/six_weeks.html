@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="_services.css">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": "Sewing",
+          "provider": {
+            "@type": "Organization",
+            "name": "Empowering the Nation"
+          },
+          "courseMode": "In-person",
+          "price": "1500 ZAR",
+          "priceCurrency": "ZAR"
+        }
+        </script>
+</head>
+<body class="showCart">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="_images/logo.png" alt="logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <div class="service">
+                <a class="active" href="services.html">Calculate Fees</a>
+                </div>
+                <ul class="dropdown">
+                    <li><a href="six_months.html">Six-Month Courses</a></li>
+                    <li><a href="six_weeks.html">Six-week Courses</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Back Button to Go to Previous Page -->
+    <button onclick="goBack()" class="back-button" style="margin-top: 20px; margin-left: 20px;">Back</button>
+    
+    <button id="back-to-top" style="display:none;">↑</button>
+
+    <br><br>
+    
+    <h2 style="text-align: left; margin-left: 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 10px;">Six-Week Short Courses</h2>
+
+    <section class="card-section">
+        <div class="course-card">
+            <a href="_childm.html">
+                <img src="_images/childminder-pic.jpg" alt="Childminder Picture">
+                <h3 style="color: rgb(0, 0, 0);">Child Minding</h3>
+                <h3 style="color: #1588da;">R750</h3>
+            </a>
+            <div class="card-buttons">
+                <button class="buy-button" onclick="toggleAddToCart(this, 'Child Minding', 750)">Add</button>
+            </div>    
+        </div>
+        
+
+         <div class="course-card">
+
+         <a  href="_garden.html">
+             <img src="_images/garden-pic.jpg" alt="garden-pic">
+             <h3 style="color: rgb(0, 0, 0);">Garden Maintenance</h3>
+             <h3 style="color: #1588da;">R750</h3>
+         </a>
+         <div class="card-buttons">
+            <button class="buy-button" onclick="toggleAddToCart(this, 'Garden Maintenance', 750)">Add</button>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <a href="_cooking.html">
+                <img src="_images/cooking-pic.webp" alt="Cooking Picture">
+                <h3 style="color: rgb(0, 0, 0);">Cooking</h3>
+                <h3 style="color: #1588da;">R750</h3>
+            </a>
+            <div class="card-buttons">
+                <button class="buy-button" onclick="toggleAddToCart(this, 'Cooking', 750)">Add</button>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- Shopping Cart Button -->
+    <button id="cart-button" class="cart-button">
+        <img src="/_images/calculator-icon.png" alt="Cart" />
+    </button>
+
+    <!-- Calculate Fees Section -->
+    <div class="calculateTab">
+        <h1>Calculate</h1>
+        <div class="ListCart">
+            <p style="margin: 10px; color: #1588da;">Select the courses you're interested in to calculate the total fees:</p>
+
+    <ul class="course-list" style="margin: 10px;">
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="750"> Child Minding - R750
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="750"> Garden Maintenance - R750
+            </label>
+        </li>
+        <li class="course-item">
+            <label>
+                <input type="checkbox" class="course-checkbox" data-price="750"> Cooking - R750
+            </label>
+        </li>
+    </ul>
+    <div class="calculate-main-button">
+    <button class="calculate-button" onclick="calculateTotal()">Calculate Fees</button>
+    </div>
+    <div id="totalFeeDisplay" class="total-fee"></div>
+           
+        </div>
+        <div class="closebtn">
+            <button class="close" onclick="closeTab()">CLOSE</button>
+        </div>
+</div>
+
+<script>
+    function calculateTotal() {
+    // Get all the course checkboxes
+    const checkboxes = document.querySelectorAll('.course-checkbox');
+    let total = 0;
+    let selectedCourses = [];
+
+    // Calculate the base total and store selected courses
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            total += parseFloat(checkbox.getAttribute('data-price'));
+            selectedCourses.push(checkbox.parentElement.textContent.trim());
+        }
+    });
+
+    // Error handling: if no courses are selected, alert the user
+    if (selectedCourses.length === 0) {
+        alert("Please select at least 1 course.");
+        return;
+    }
+
+    // Apply discount based on the number of selected courses
+    let discount = 0;
+    if (selectedCourses.length === 2) {
+        discount = 0.05;
+    } else if (selectedCourses.length === 3) {
+        discount = 0.10;
+    } else if (selectedCourses.length > 3) {
+        discount = 0.15;
+    }
+
+    // Calculate the discounted price
+    const discountedTotal = total * (1 - discount);
+
+    // Calculate VAT (15%)
+    const VAT_RATE = 0.15;
+    const vatAmount = discountedTotal * VAT_RATE;
+    const finalTotal = discountedTotal + vatAmount;
+
+    // Display the calculation details
+    const totalFeeDisplay = document.getElementById('totalFeeDisplay');
+    totalFeeDisplay.innerHTML = `
+        <p>Base Total: R${total.toFixed(2)}</p>
+        <p>Discount: ${discount * 100}% Discounted Total: R${discountedTotal.toFixed(2)}</p>
+        <p>VAT (15%): R${vatAmount.toFixed(2)}</p>
+        <p><strong>Final Total: R</strong>${finalTotal.toFixed(2)}</p>
+    `;
+
+    // Save the calculated values in local storage
+    localStorage.setItem('calculateTabData', JSON.stringify({
+        total: total.toFixed(2),
+        discount: discount * 100,
+        discountedTotal: discountedTotal.toFixed(2),
+        vatAmount: vatAmount.toFixed(2),
+        finalTotal: finalTotal.toFixed(2),
+        selectedCourses: selectedCourses
+    }));
+}
+
+// Retrieve and display calculation values from local storage if available
+function loadCalculateTabData() {
+    const storedData = localStorage.getItem('calculateTabData');
+    if (storedData) {
+        const { total, discount, discountedTotal, vatAmount, finalTotal, selectedCourses } = JSON.parse(storedData);
+        const totalFeeDisplay = document.getElementById('totalFeeDisplay');
+        totalFeeDisplay.innerHTML = `
+            <p>Base Total: R${total}</p>
+            <p>Discount: ${discount}% Discounted Total: R${discountedTotal}</p>
+            <p>VAT (15%): R${vatAmount}</p>
+            <p><strong>Final Total: R</strong>${finalTotal}</p>
+        `;
+        
+        // Optionally re-check selected courses
+        const checkboxes = document.querySelectorAll('.course-checkbox');
+        checkboxes.forEach(checkbox => {
+            if (selectedCourses.includes(checkbox.parentElement.textContent.trim())) {
+                checkbox.checked = true;
+            }
+        });
+    }
+}
+
+// Call loadCalculateTabData when the page loads to display previously saved data
+window.addEventListener('DOMContentLoaded', loadCalculateTabData);
+
+    // Function to toggle the calculate tab
+    document.getElementById('cart-button').addEventListener('click', function() {
+    const calculateTab = document.querySelector('.calculateTab');
+    calculateTab.classList.toggle('visible');
+});
+
+// Function to close the tab when the "CLOSE" button is clicked
+function closeTab() {
+    document.querySelector('.calculateTab').classList.remove('visible');
+}
+
+</script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

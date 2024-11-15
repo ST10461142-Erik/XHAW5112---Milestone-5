@@ -1,0 +1,429 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.image-group img {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #00000000;
+}
+
+.card {
+  background-color: #d4d1d1;
+  border-radius: 10px;
+  padding: 30px;
+  width: 350px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: right;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin-left: 100px;
+  margin-top: 10px;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: rgb(0, 0, 0);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.card h3:last-of-type {
+  color: #1588da;
+  margin-bottom: 20px;
+}
+
+.courses-card-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.courses-card-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button {
+  background-color: #1588da;
+  color: white;
+}
+
+.buy-button:hover {
+  background-color: #005bb5;
+}
+
+.share-button {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.share-button:hover {
+  background-color: #eeeeee;
+}
+
+.image-gallery {
+  display: flex;
+  gap: 30px;
+  margin-left: 20px;
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+}
+
+.other-courses-card {
+  background-color: #e9e9e9;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: fit-content;
+  height: fit-content;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.other-courses-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.other-courses-card a {
+  text-decoration: none;
+  color: black;
+}
+
+.other-courses-card h3 {
+  color: #000;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.course-image {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.share-modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.share-modal li {
+  display: inline;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.close {
+  color: #8a8a8a;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.share-modal a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.share-modal a:hover {
+  text-decoration: underline;
+}
+
+.svg-inline--fa {
+  vertical-align: -0.200em;
+}
+
+.rounded-social-buttons {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover,
+.rounded-social-buttons .social-button:focus {
+  transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter,
+.fa-facebook-f,
+.fa-linkedin,
+.fa-youtube,
+.fa-instagram {
+  font-size: 25px;
+}
+
+.rounded-social-buttons .social-button.twitter {
+  background: #55acee;
+}
+
+.rounded-social-buttons .social-button.twitter:hover,
+.rounded-social-buttons .social-button.twitter:focus {
+  color: #55acee;
+  background: #fefefe;
+  border-color: #55acee;
+}
+
+.rounded-social-buttons .social-button.instagram {
+  background: #125688;
+}
+
+.rounded-social-buttons .social-button.instagram:hover,
+.rounded-social-buttons .social-button.instagram:focus {
+  color: #125688;
+  background: #fefefe;
+  border-color: #125688;
+}
+
+.contact-form-container {
+  margin: 20px;
+  padding: 20px;
+  border: 0.5px solid #000000;
+  border-radius: 5px;
+  background-color: #d4d1d1;
+}
+
+.contact-form-container h3 {
+  margin-bottom: 15px;
+}
+
+.contact-form-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form-container button {
+  padding: 10px 15px;
+  background-color: #1588da;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form-container button:hover {
+  background-color: #005bb5;
+}
+
+#back-to-top {
+  justify-content: center;
+  bottom: 20px;
+  background-color: #1588da;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #1588da;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center;
+  }
+
+  .card {
+    width: 100%; /* Full width for cards on small screens */
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .image-gallery {
+    flex-direction: column; /* Stack images vertically */
+    gap: 15px;
+  }
+
+  .other-courses-card {
+    width: 100%; /* Full width for course cards */
+  }
+
+  .rounded-social-buttons .social-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    justify-content: space-between; /* Distribute space evenly for larger screens */
+  }
+
+  .card {
+    width: 400px; /* Larger card width on bigger screens */
+    margin-left: 20px;
+  }
+
+  .image-gallery {
+    gap: 40px;
+  }
+
+  .rounded-social-buttons .social-button {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.75rem;
+  }
+}
+/* Cart Button Styles */
+
+.cart-button {
+  position: fixed;
+  bottom: 50px; /* Distance from bottom */
+  right: 20px; /* Distance from right */
+  background-color: #c2c2c2; /* Button background color */
+  width: 60px; /* Fixed width for circular shape */
+  height: 60px; /* Fixed height for circular shape */
+  border-radius: 50%; /* Fully round button */
+  border: 9px; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+  z-index: 1000; /* Ensure it's on top of other elements */
+  transition: background-color 0.3s; /* Smooth transition for hover */
+  display: flex; /* Center content */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+/* Styles for the cart icon */
+.cart-button img {
+width: 40px; /* Adjust icon size */
+height: 40px; /* Adjust icon size */
+}
+.cart-button:hover {
+background-color: #e4e4e4; /* Darker shade on hover */
+}
+
+/* Styles for the cart count badge */
+#cart-count {
+position: absolute; /* Position the count absolutely */
+top: 5px; /* Adjust to position the count above the icon */
+right: -5px; /* Adjust to position the count to the right of the icon */
+background-color: #e0a800; /* Badge background color */
+color: white; /* Text color */
+border-radius: 50%; /* Round badge */
+padding: 2px 5px; /* Badge padding */
+font-size: 0.8em; /* Badge font size */
+font-weight: bold; /* Bold text */
+}
+/* Calculate Tab - hidden off-screen by default */
+.calculateTab {
+  position: fixed;
+  right: -100%; /* Hide it off-screen to the right */
+  top: 0;
+  width: 300px; /* Adjust width as needed */
+  height: 100%;
+  background-color: #f5f7fa;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.5s ease; /* Slide-in transition */
+  padding: 20px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* When visible, position it in view */
+.calculateTab.visible {
+  right: 0; /* Bring it into view */
+}
+
+/* Style adjustments for close button */
+.calculateTab .close-btn {
+  display: block;
+  margin-top: 20px;
+  background-color: #1588da;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+}

@@ -1,0 +1,332 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    margin-left: 20px;
+}
+
+/* Navigation Bar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4d1d1;
+    padding: 2px 20px;
+    margin-top: 20px; /* Add margin from the top */
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px; /* Add rounded corners to the nav bar */
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.nav-links a.active  {
+    background-color: #0580e4;
+    border-radius: 5px;
+}
+
+/* Style for dropdown */
+.nav-links li {
+    position: relative;
+}
+.nav-links li .service [href="services.html"]::after {
+    content: " ▼"; /* Adds a down arrow */
+    font-size: 0.8em; /* Adjust size as needed */
+    color: #333; /* Match link color */
+    margin-left: 5px;
+}
+
+.nav-links .dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    top: 100%; /* Position below the parent link */
+    left: 0;
+    background-color: #f9f9f9; /* Adjust as needed */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+    z-index: 1;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.nav-links .dropdown li {
+    width: 220px; /* Adjust width as needed */
+    padding: 8px;
+}
+
+.nav-links .dropdown li a {
+    color: #333; /* Adjust as needed */
+    text-decoration: none;
+    display: block;
+}
+
+/* Show dropdown on hover */
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+/* Additional styles for hover effects */
+.nav-links .dropdown li a:hover {
+    background-color: #ddd; /* Adjust as needed */
+}
+
+/* Main Content */
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    margin-left: 50px;
+}
+
+img {
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: 10px; /* Add rounded corners to the Images */
+}
+
+/* Main content styling */
+.home-content {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically center */
+    justify-content: space-between; /* Space out items */
+    padding: 20px; /* Add some padding if needed */
+}
+
+.home-content-text {
+    max-width: 50%; /* Limit width of text section */
+    margin-right: 30px; /* Space between text and image */
+}
+
+.large-pic {
+    max-width: 100%; /* Make image responsive */
+    height: 400px; /* Maintain aspect ratio */
+    width: 600px; /* Set a specific width for the image */
+}
+
+p {
+    text-align: left;
+    font-size: 20px;
+    color: #666;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-section {
+    display: flex;
+    padding: 10px;
+    background-color: #ffffff00;
+    gap: 20px;
+    margin-right: 40px;
+    margin-left: 20px;
+}
+
+.course-card {
+    background-color: #c2c2c2;
+    padding: 10px;
+    width: 400px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(5px);
+    border-radius: 20px;
+}
+
+.course-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.course-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.course-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.course-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    background-color: #1588da;
+    color: white;
+    padding: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.course-card.slide-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.course-card img:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+/* Ensure no underline for the entire link in course-card */
+.course-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-buttons {
+    display: flex;           /* Enable flexbox on the container */
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 10px;        /* Optional: add some space above the buttons */
+}
+
+.card-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button {
+    background-color: #1588da;
+    color: white;
+}
+
+.buy-button:hover {
+    background-color: #005bb5;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Navigation bar */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* Home content layout */
+    .home-content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .home-content-text {
+        max-width: 100%;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .large-pic {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Course cards */
+    .card-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-card {
+        width: 100%; /* Make course cards full-width */
+        margin-bottom: 20px;
+    }
+
+    /* Back to top button */
+    #back-to-top {
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        padding: 15px 0;
+    }
+
+    /* Cart summary */
+    .cart-summary {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Buttons */
+    .card-buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Larger screen adjustments */
+    .home-content {
+        padding: 40px;
+    }
+
+    .course-card {
+        width: 450px;
+    }
+
+    .card-buttons {
+        margin-top: 20px;
+    }
+
+    .cart-summary {
+        max-width: 350px;
+    }
+}
+
+
+
+
+
+
+
+
+
+

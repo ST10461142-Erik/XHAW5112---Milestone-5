@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+     margin-left: 20px;
+     margin-right: 20px;
+  }
+
+  /* Navigation Bar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4d1d1;
+    padding: 2px 20px;
+    margin-top: 20px; /* Add margin from the top */
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px; /* Add rounded corners to the nav bar */
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.nav-links a.active  {
+    background-color: #0580e4;
+    border-radius: 5px;
+}
+
+/* Style for dropdown */
+.nav-links li {
+    position: relative;
+}
+.nav-links li .service [href="services.html"]::after {
+    content: " ▼"; /* Adds a down arrow */
+    font-size: 0.8em; /* Adjust size as needed */
+    color: #333; /* Match link color */
+    margin-left: 5px;
+}
+
+.nav-links .dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    top: 100%; /* Position below the parent link */
+    left: 0;
+    background-color: #f9f9f9; /* Adjust as needed */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    list-style-type: none;
+    z-index: 1;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.nav-links .dropdown li {
+    width: 200px; /* Adjust width as needed */
+    padding: 8px;
+}
+
+.nav-links .dropdown li a {
+    color: #333; /* Adjust as needed */
+    text-decoration: none;
+    display: block;
+}
+
+/* Show dropdown on hover */
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+/* Additional styles for hover effects */
+.nav-links .dropdown li a:hover {
+    background-color: #ddd; /* Adjust as needed */
+}
+  
+.card-section {
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+    background-color: transparent;
+    gap: 60px;
+}
+
+
+.course-card.slide-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+#back-to-top {
+    justify-content: center;
+    bottom: 20px;
+    background-color: #1588da;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.card-buttons {
+    display: flex;           /* Enable flexbox on the container */
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 10px;       /* Optional: add some space above the buttons */
+}
+
+.card-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button {
+    background-color: #1588da;
+    color: white;
+  }
+  
+  .buy-button:hover {
+    background-color: #005bb5;
+  }
+/* Cart Button Styles */
+
+    .cart-button {
+        position: fixed;
+        bottom: 50px; /* Distance from bottom */
+        right: 20px; /* Distance from right */
+        background-color: #c2c2c2; /* Button background color */
+        width: 60px; /* Fixed width for circular shape */
+        height: 60px; /* Fixed height for circular shape */
+        border-radius: 50%; /* Fully round button */
+        border: 9px; /* Remove border */
+        cursor: pointer; /* Pointer cursor on hover */
+        z-index: 1000; /* Ensure it's on top of other elements */
+        transition: background-color 0.3s; /* Smooth transition for hover */
+        display: flex; /* Center content */
+        align-items: center; /* Center content vertically */
+        justify-content: center; /* Center content horizontally */
+        
+    }
+
+/* Styles for the cart icon */
+.cart-button img {
+    width: 40px; /* Adjust icon size */
+    height: 30px; /* Adjust icon size */
+}
+.cart-button:hover {
+    background-color: #e4e4e4; /* Darker shade on hover */
+}
+
+/* Styles for the cart count badge */
+#cart-count {
+    position: absolute; /* Position the count absolutely */
+    top: 5px; /* Adjust to position the count above the icon */
+    right: -5px; /* Adjust to position the count to the right of the icon */
+    background-color: #e0a800; /* Badge background color */
+    color: white; /* Text color */
+    border-radius: 50%; /* Round badge */
+    padding: 2px 5px; /* Badge padding */
+    font-size: 0.8em; /* Badge font size */
+    font-weight: bold; /* Bold text */
+}
+
+.calculateTab {
+    width: 400px;
+    background-color: #303030;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    inset: 0 0 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    color: #ffffff;
+}
+
+.calculateTab h1 {
+    padding: 20px;
+    font-weight: 400;
+    margin-top:-10px;
+    color: #000000;
+}
+
+.calculateTab .closebtn { 
+    display: grid;
+    width: 100%;
+}
+
+/* Calculate Tab - hidden off-screen by default */
+.calculateTab {
+    position: fixed;
+    right: -100%; /* Hide it off-screen to the right */
+    top: 0;
+    width: 300px; /* Adjust width as needed */
+    height: 100%;
+    background-color: #f5f7fa;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.5s ease; /* Slide-in transition */
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* When visible, position it in view */
+.calculateTab.visible {
+    right: 0; /* Bring it into view */
+}
+
+/* Style adjustments for close button */
+.calculateTab .close {
+    display: block;
+    margin-top: 20px;
+    background-color: #1588da;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+/* Optional styles for when the cart button is clicked */
+.cart-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #1588da;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+}
+.calculate-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    
+}
+.calculate-main-button {
+    display: flex;           /* Enable flexbox on the container */
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 20px;  
+
+}
+
+
+.total-fee{
+    color: #ffffff;
+    margin: 10px;
+}
+
+/* Ensure checkbox and label styling are correct */
+.course-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Hide the default checkbox but ensure label styles are intact */
+.course-checkbox {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.course-item label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    background-color: #f1f1f1;
+    border: 2px solid #1588da;
+    border-radius: 5px;
+    color: #1588da;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    width: 100%;
+}
+
+/* Checkbox checked state */
+.course-checkbox:checked + label {
+    background-color: #1588da;
+    color: white;
+}
+
+/* Custom checkbox checked (before) */
+.course-checkbox:checked + label::before {
+    background-color: #1588da;
+    color: white; /* This ensures the box is also blue */
+}
+
+/* Add checkmark to label when checked */
+.course-checkbox:checked + label::after {
+    content: '✓';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+/* Ensure scrollbar appears when content overflows */
+.calculateTab::-webkit-scrollbar {
+    width: 8px; /* Adjust scrollbar width */
+}
+
+.calculateTab::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar color */
+    border-radius: 4px;
+}
+
+.calculateTab::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Scrollbar hover color */
+}
+.back-button {
+    padding: 10px 15px;
+    background-color: #1588da;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+.back-button:hover {
+    background-color: #005bb5;
+  }
